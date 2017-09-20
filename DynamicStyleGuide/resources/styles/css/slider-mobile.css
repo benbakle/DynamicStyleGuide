@@ -1,0 +1,274 @@
+﻿
+/*Selectors and properties relative to navigation in Bootstrap 3.3.7 */
+
+.slide-mobile.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+}
+
+.slide-mobile.navbar-default {
+  background-color: #fff;
+  border-color: #e7e7e7;
+}
+
+.slide-mobile.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.slide-mobile .container-fluid>.navbar-collapse,
+.slide-mobile .container-fluid>.navbar-header,
+.slide-mobile .container>.navbar-collapse,
+.slide-mobile .container>.navbar-header {
+  margin-right: -15px;
+  margin-left: -15px;
+  overflow: hidden;
+}
+
+.slide-mobile .container-fluid>.navbar-collapse,
+.slide-mobile .container>.navbar-collapse {
+  max-height: none;
+}
+
+.slide-mobile .container-fluid>.navbar-header,
+.slide-mobile .container>.navbar-header {
+  background-color: #fff;
+  padding: 0 15px;
+}
+
+.slide-mobile .navbar-toggle {
+  cursor: pointer;
+  float: right;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: .5s;
+}
+
+.slide-mobile .navbar-toggle.collapsed {
+  background-color: #fff;
+  color: #005a47;
+}
+
+.slide-mobile.navbar-default .navbar-toggle:hover,
+.slide-mobile .navbar-toggle.collapsed:hover,
+.slide-mobile .navbar-toggle.collapsed:active {
+  color: #fff;
+}
+
+.slide-mobile .navbar-nav {
+  margin: 0 -15px;
+  overflow-x: hidden;
+}
+
+
+/* Adjust relative to image logo size */
+
+.slide-mobile .navbar-brand {
+  padding: 5px 10px;
+}
+
+.slide-mobile .navbar-brand div {
+  height: inherit;
+}
+
+.slide-mobile .navbar-brand img {
+  height: 100%;
+  display: inline-block;
+}
+
+.slide-mobile.navbar-default .navbar-toggle.collapsed,
+{
+  background-color: #fff;
+  color: #005a47;
+}
+
+.slide-mobile.navbar-default .navbar-toggle:active,
+.slide-mobile.navbar-default .navbar-toggle.collapsed:hover,
+.slide-mobile.navbar-default .navbar-toggle:hover {
+  color: #fff;
+}
+
+.slide-mobile.navbar-default .navbar-nav a,
+.slide-mobile.navbar-default .navbar-nav > .active > a,
+.slide-mobile.navbar-default .navbar-nav > .active > a:focus,
+.slide-mobile.navbar-default .navbar-nav .open .dropdown-menu > li > a,
+.slide-mobile.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,
+.slide-mobile .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.slide-mobile.navbar-default .navbar-nav > .active > a:hover,
+.slide-mobile .navbar-nav .open .dropdown-menu .dropdown-header,
+.slide-mobile .navbar-nav .open .dropdown-menu > li > a {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  color: #333;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  padding: 23px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.slide-mobile.navbar-default .navbar-nav > li.dropdown {
+  height: 72px;
+  position: static;
+}
+
+.slide-mobile.navbar-default .navbar-nav > li.dropdown > a {
+  position: relative;
+}
+
+.slide-mobile.navbar-default .navbar-nav > li.dropdown .caret {
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #333;
+  border-top: 10px solid transparent;
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slide-mobile .navbar-nav .dropdown-menu {
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+  left: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 52px;
+  transition: 1.5s;
+  width: 100%;
+  visibility: hidden;
+}
+
+.slide-mobile .navbar-nav .open > .dropdown-menu {
+  left: 0;
+  visibility: visible;
+}
+
+.slide-mobile .navbar-nav .open .dropdown-menu > li > a.nav-back,
+.slide-mobile .navbar-nav .open .dropdown-menu > li > a.nav-back:link,
+.slide-mobile .navbar-nav .open .dropdown-menu > li > a.nav-back:focus,
+.slide-mobile .navbar-nav .open .dropdown-menu > li > a.nav-back:active,
+.slide-mobile .navbar-nav .open .dropdown-menu > li > a.nav-back:hover,
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back,
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back:link,
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back:focus,
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back:active,
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back:hover {
+  background-color: #333;
+  color: #fff;
+  padding-left: 40px;
+  text-transform: lowercase;
+}
+
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back {
+  position: relative;
+}
+
+.slide-mobile .navbar-nav .dropdown-menu > li > a.nav-back:before {
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #fff;
+  border-top: 10px solid transparent;
+  content: "";
+  left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {
+  .slide-mobile .container-fluid>.navbar-collapse,
+  .slide-mobile .container-fluid>.navbar-header,
+  .slide-mobile .container>.navbar-collapse,
+  .slide-mobile .container>.navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .slide-mobile.navbar-default .navbar-nav a,
+  .slide-mobile.navbar-default .navbar-nav > .active > a,
+  .slide-mobile.navbar-default .navbar-nav > .active > a:focus,
+  .slide-mobile.navbar-default .navbar-nav .open .dropdown-menu > li > a,
+  .slide-mobile.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus,
+  .slide-mobile .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .slide-mobile.navbar-default .navbar-nav > .active > a:hover,
+  .slide-mobile .navbar-nav .open .dropdown-menu .dropdown-header,
+  .slide-mobile .navbar-nav .open .dropdown-menu > li > a {
+    padding: 13px 15px;
+  }
+  .slide-mobile .navbar-nav {
+    overflow: initial;
+  }
+  .slide-mobile.navbar-default .navbar-nav > li.dropdown {
+    height: auto;
+    position: relative;
+  }
+  .slide-mobile.navbar-default .navbar-nav > li.dropdown .caret {
+    display: inline-block;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transform: none;
+    right: initial;
+    top: 3px;
+    transform: initial;
+  }
+  .slide-mobile .navbar-nav .dropdown-menu {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    width: auto;
+    opacity: 0;
+    transition: .5s;
+  }
+  .slide-mobile .navbar-nav .open>.dropdown-menu {
+    opacity: 1;
+  }
+  .slide-mobile .nav-back {
+    display: none;
+  }
+}

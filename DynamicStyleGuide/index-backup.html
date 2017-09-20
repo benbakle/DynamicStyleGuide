@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="resources/styles/scss/global.css" rel="stylesheet" />
+    <link href="resources/styles/css/inline-edit.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="resources/js/controllers/dynamic-style-guide-controller.js"></script>
+    <!--<script src="resources/js/services/payees-service.js"></script>-->
+</head>
+
+<body ng-app="app" ng-controller="dynamicStyleGuideController">
+
+
+    <!-- <INSERT GLOBAL HEADER HERE> -->
+    <!--:: STYLE GUIDE ::-->
+    <div class="style-guide-wrapper">
+
+        <!--:: STYLE GUIDE - HEADER ::-->
+        <section class="header">
+            <div class="header-bar">
+                <div class="container">
+                    <h1>
+                        <span style="font-family:'century gothic'; font-size:1.8em; color:#FFA800;font-weight:700;">aptera</span> STYLE GUIDE
+                    </h1>
+                </div>
+            </div>
+            <div class="container">
+                <ul class="list-inline style-guide-nav">
+                    <li><a href="#fontFamiliy">Font Families</a></li>
+                    <li><a href="#typography">Typography</a></li>
+                    <li><a href="#colors">Colors</a></li>
+                    <li><a href="#links">Links</a></li>
+                    <li><a href="#buttons">Buttons</a></li>
+                    <li><a href="#lists">Lists</a></li>
+                    <li><a href="#sample-text">Sampe Text</a></li>
+                </ul>
+                <hr />
+                <div class="slide-toggle">
+                    <a href="javascript:void(0)" class="slide-toggle-trigger">Add font/stylesheet <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <div class="slide-toggle-content">
+                        <div class="insert-into-head-display">
+                        </div>
+                        <div class="insert-into-head">
+                            <input type="text" class="insert-text" value="https://fonts.googleapis.com/css?family=Roboto" />
+                            <a href="javascript:void(0)" class="insert-css"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <a href="#" class="inline-edit-all">Edit All <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <br />
+                <a href="#" class="revert-to-defaults">Revert To Defaults <i class="fa fa-refresh" aria-hidden="true"></i></a>
+            </div>
+        </section>
+
+        <section class="font-family-wrapper" id="fontFamiliy">
+            <div class="container">
+                <h2>Font Families</h2>
+                <hr />
+                <!--:: HEADING FONT ::-->
+                <div class="row property-display-wrapper">
+                    <div class="col-md-5">
+                        <h3>Heading Font</h3>
+
+                        <input ng-model="styles.h1.fontSize" ng-change="rebindStyles()" ng-model-options="{debounce :500}" />
+
+                        {{styles.h1.fontSize}}
+
+                        <h1>Test</h1>
+                        <property-block-directive property="styles.h1.fontFamily"></property-block-directive>
+                        <property-block-directive property="styles.h1.fontSize"></property-block-directive>
+                        <property-block-directive property="styles.h1.fontStyle"></property-block-directive>
+                        <property-block-directive property="styles.h1.fontWeight"></property-block-directive>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="font-display-wrapper">
+                            <div class="h1 font-display">Aa</div>
+                            <div class="font-desc property-printer h1" data-class="h1" data-element-property="font-family"></div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!--:: BODY FONT ::-->
+                <div class="row  property-display-wrapper">
+                    <div class="col-md-5">
+                        <h3>Body Font</h3>
+                        <property-block-directive property="styles.body.fontFamily"></property-block-directive>
+                        <property-block-directive property="styles.body.fontSize"></property-block-directive>
+                        <property-block-directive property="styles.body.fontStyle"></property-block-directive>
+                        <property-block-directive property="styles.body.fontWeight"></property-block-directive>
+                    </div>
+                    <div class="col-md-7 ">
+                        <div class="font-display-wrapper">
+                            <div class="font-display">Aa</div>
+                            <div class="font-desc property-printer" data-class="h1" data-element-property="font-family"></div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!--:: ACCENT FONT ::-->
+                <div class="row  property-display-wrapper">
+                    <div class="col-md-5">
+                        <h3 class="tag-title">Accent Font</h3>
+                        <property-block-directive property="styles.body.fontFamily"></property-block-directive>
+                        <property-block-directive property="styles.body.fontSize"></property-block-directive>
+                        <property-block-directive property="styles.body.fontStyle"></property-block-directive>
+                        <property-block-directive property="styles.body.fontWeight"></property-block-directive>
+                    </div>
+                    <div class="col-md-7 ">
+                        <div class="font-display-wrapper">
+                            <div class="font-display accent-font">Aa</div>
+                            <div class="font-desc property-printer accent-font" data-element-to-display=".accent-font" data-element-property="font-family"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="styles">{{transpiledStyles}}</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="resources/js/controllers/dynamic-style-guide-controller.js"></script>
+    <script src="resources/js/style-guide.js"></script>
+    <script src="resources/js/color-shader.js"></script>
+    <script src="resources/js/inline-edit.js"></script>
+    <script src="resources/js/insert-into-head.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿{
+  "EnableCodeCoverage": "false",
+  "EnableTestFileBatching": "false",
+  "Framework": "jasmine",
+  "FrameworkVersion": "2",
+  "References": [
+    { "Path": "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" },
+    { "Path": "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-mocks.js" },
+    { "Path": "../../DynamicStyleGuide/resources/js/controllers/styleGuideController.js" }
+  ],
+  "TestFileTimeout": 15000
+}
