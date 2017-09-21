@@ -21,7 +21,7 @@ function styleGuideController($scope, service) {
 
     function init() {
         getStylesObject();
-        writeStylesObjectToHtml();
+        stringifyStylesObject();
 
 
         //storeStylesObject();
@@ -41,7 +41,7 @@ function styleGuideController($scope, service) {
         $scope.styles = service.getStylesObject();
     }
 
-    function writeStylesObjectToHtml() {
+    function stringifyStylesObject() {
         for (var selector in $scope.styles) {
             $scope.transpiledStyles = $scope.transpiledStyles + $scope.styles[selector].selector + "{";
             appendSelectorProperties($scope.styles[selector]);
@@ -85,9 +85,7 @@ function styleGuideController($scope, service) {
 
     function change() {
         $scope.transpiledStyles = "";
-        writeStylesObjectToHtml();
-        _htmlPrintStyles.innerHTML = $scope.transpiledStyles;
-        _htmlStyles.innerHTML = "<style>" + $scope.transpiledStyles + "</style>";
+        stringifyStylesObject();
 
     }
     //function getStuff() {
