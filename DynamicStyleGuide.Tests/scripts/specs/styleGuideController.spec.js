@@ -1,4 +1,4 @@
-﻿describe("The Template Controller", function () {
+﻿describe("The Style Guide Controller", function () {
     var _controller, _service, _$rootScope;
     var _controllerID = 'styleGuideController';
 
@@ -9,8 +9,8 @@
     });
 
     describe("when initializing", function () {
-        it("pass some tests", function () {
-            expect(true).toBeTruthy();
+        it("populates the styles", function () {
+            expect(_$scope.styles).toEqual(_mockStuff());
         });
     });
 
@@ -32,7 +32,7 @@
         _$scope = $rootScope.$new();
 
         //spys before controller initializes in order to see the service(s) ran during init();
-        spyOn(_service, 'getStuffByUsername').and.callThrough();
+        // spyOn(_service, 'getStylesObject').and.callThrough();
 
         _controller = $controller(_controllerID, { $scope: _$scope, styleGuideService: _service });
     }
@@ -40,13 +40,16 @@
 
 function mockService() {
     return {
-        getStuffByUsername: function (username) {
-            return {
-                then: function (callback) {
-                    callback({ data: _mockStuff() });
-                }
-            }
+        getStylesObject: function () {
+            return _mockStuff()
         }
+        //getStuffByUsername: function (username) {
+        //    return {
+        //        then: function (callback) {
+        //            callback({ data: _mockStuff() });
+        //        }
+        //    }
+        //}
         //editPayee: function () {
         //    return {
         //        then: function (callback) {

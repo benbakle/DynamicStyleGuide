@@ -33,12 +33,10 @@
             <br />
             <!--<div id="printStyles"></div>-->
             {{transpiledStyles}}
-            <style ng-bind-html="transpiledStyles"></style>
         </div>
+        <!--DYNAMICALLY CREATED CSS-->
+        <style ng-bind-html="transpiledStyles"></style>
     </div>
-
-    <!--DYNAMICALLY CREATED CSS-->
-    <!--<div id="styles"></div>-->
 
     <!--LIBRARIES-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -46,14 +44,14 @@
     <script src="scripts/libraries/angularjs/angular.min.js"></script>
     <script src="scripts/libraries/angularjs/angular-sanitize.min.js"></script>
 
+    <!--ANGULAR OBJECTS-->
+    <script src="scripts/objects/stylesObject.js"></script>
+
     <!--ANGULAR CONTROLLERS-->
     <script src="scripts/controllers/styleGuideController.js"></script>
 
     <!--ANGULAR SERVICES-->
     <script src="scripts/services/styleGuideService.js"></script>
-
-    <!--ANGULAR OBJECTS-->
-    <script src="scripts/objects/stylesObject.js"></script>
 
 
 

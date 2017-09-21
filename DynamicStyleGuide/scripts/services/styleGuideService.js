@@ -2,8 +2,8 @@
 
 app.factory('styleGuideService', function ($http) {
     return {
-        getStuffByUsername: function (username) {
-            return new $http.get("https://api.github.com/users/" + username);
+        getStylesObject: function () {
+            return stylesObject();
         }
         //addStuff: function (payee) {
         //    return new $http({

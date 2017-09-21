@@ -6,11 +6,11 @@
   "References": [
     { "Path": "../../dynamicstyleguide/scripts/libraries/angularjs/angular.min.js" },
     { "Path": "../../dynamicstyleguide/scripts/libraries/angularjs/angular-mocks.js" },
+    { "Path": "../../dynamicstyleguide/scripts/objects/stylesObject.js" },
     { "Path": "../../dynamicstyleguide/scripts/controllers/templateController.js" },
     { "Path": "../../dynamicstyleguide/scripts/controllers/styleGuideController.js" },
     { "Path": "../../dynamicstyleguide/scripts/services/templateService.js" },
-    { "Path": "../../dynamicstyleguide/scripts/services/styleGuideService.js" },
-    { "Path": "../../dynamicstyleguide/scripts/objects/stylesObject.js" }
+    { "Path": "../../dynamicstyleguide/scripts/services/styleGuideService.js" }
   ],
   "TestFileTimeout": 15000
 }

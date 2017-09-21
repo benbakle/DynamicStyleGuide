@@ -12,6 +12,7 @@ function styleGuideController($scope, service) {
     $scope.transpiledStyles = "";
     $scope.printStyles = "";
 
+    $scope.getStylesObject = getStylesObject;
     $scope.change = change;
     $scope.splitCamelCaseString = splitCamelCaseString;
     $scope.getSelectorProperties = getSelectorProperties;
@@ -19,14 +20,33 @@ function styleGuideController($scope, service) {
     init();
 
     function init() {
-        $scope.styles = stylesObject();
-
+        getStylesObject();
         writeStylesObjectToHtml();
+
+
         //storeStylesObject();
-        addSelector("camelCase", ".testy");
-        addPropertyToSelector("camelCase", "fontSize", "12px");
-        addPropertyToSelector("camelCase", "sampleHtml", "<div class='testy'>Test Biatch</div>");
+       // addSelector("camelCase", ".testy");
+       // addPropertyToSelector("camelCase", "fontSize", "12px");
+       // addPropertyToSelector("camelCase", "sampleHtml", "<div class='testy'>Test Biatch</div>");
         console.log($scope.styles);
+    }
+
+    //function getStylesObject() {
+    //    service.getStylesObject().then(function (response) {
+    //        $scope.styles = response.data;
+    //    });
+    //}
+
+    function getStylesObject() {
+        $scope.styles = service.getStylesObject();
+    }
+
+    function writeStylesObjectToHtml() {
+        for (var selector in $scope.styles) {
+            $scope.transpiledStyles = $scope.transpiledStyles + $scope.styles[selector].selector + "{";
+            appendSelectorProperties($scope.styles[selector]);
+            $scope.transpiledStyles = $scope.transpiledStyles + "}";
+        }
     }
 
     function storeStylesObject() {
@@ -45,15 +65,6 @@ function styleGuideController($scope, service) {
         $scope.styles[selectorName][propertyName] = propertyValue;
     }
 
-    function writeStylesObjectToHtml() {
-        for (var selector in $scope.styles) {
-            //   if (selector != "transpiledStyles") {
-            $scope.transpiledStyles = $scope.transpiledStyles + $scope.styles[selector].selector + "{";
-            appendSelectorProperties($scope.styles[selector]);
-            $scope.transpiledStyles = $scope.transpiledStyles + "}";
-            //   }
-        }
-    }
 
     function appendSelectorProperties(selector) {
         for (var property in selector) {
