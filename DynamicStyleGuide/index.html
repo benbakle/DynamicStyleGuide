@@ -6,18 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <!--<link href="resources/styles/scss/global.css" rel="stylesheet" />-->
-    <!--<link href="resources/styles/css/inline-edit.css" rel="stylesheet" />-->
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />-->
-    <!--<script src="resources/js/controllers/dynamic-style-guide-controller.js"></script>-->
-    <!--<script src="resources/js/services/payees-service.js"></script>-->
 </head>
 
 <body>
-    <div ng-app="app" ng-controller="styleGuideController" ng-cloak>
+    <div ng-app="app" ng-controller="styleGuideController" >
         <div class="container">
             <div class="row">
-                <div ng-repeat="(key, selector) in styles" class="selector col-md-12">
+                <div ng-repeat="(key, selector) in styles" class="selector col-md-12" ng-cloak>
                     <div class="sample" ng-if="styles[key].sampleHtml">
                         <div ng-bind-html="styles[key].sampleHtml"></div>
                     </div>
@@ -45,24 +41,24 @@
     <!--LIBRARIES-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="resources/js/lib/angularjs/angular.min.js"></script>
-    <script src="resources/js/lib/angularjs/angular-sanitize.min.js"></script>
+    <script src="scripts/libraries/angularjs/angular.min.js"></script>
+    <script src="scripts/libraries/angularjs/angular-sanitize.min.js"></script>
 
     <!--ANGULAR CONTROLLERS-->
-    <script src="resources/js/controllers/styleGuideController.js"></script>
+    <script src="scripts/controllers/styleGuideController.js"></script>
 
     <!--ANGULAR SERVICES-->
-    <script src="resources/js/services/styleGuideService.js"></script>
+    <script src="scripts/services/styleGuideService.js"></script>
 
     <!--ANGULAR OBJECTS-->
-    <script src="resources/js/objects/stylesObject.js"></script>
+    <script src="scripts/objects/stylesObject.js"></script>
 
 
 
-    <!--<script src="resources/js/style-guide.js"></script>-->
-    <!--<script src="resources/js/color-shader.js"></script>-->
-    <!--<script src="resources/js/inline-edit.js"></script>-->
-    <!--<script src="resources/js/insert-into-head.js"></script>-->
+    <!--<script src="scripts/style-guide.js"></script>-->
+    <!--<script src="scripts/color-shader.js"></script>-->
+    <!--<script src="scripts/inline-edit.js"></script>-->
+    <!--<script src="scripts/insert-into-head.js"></script>-->
 </body>
 </html>
 

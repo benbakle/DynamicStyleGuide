@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dynamic_style_guide_1._1</RootNamespace>
-    <AssemblyName>dynamic-style-guide-1.1</AssemblyName>
+    <RootNamespace>AngularTemplate</RootNamespace>
+    <AssemblyName>AngularTemplate</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -67,107 +67,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
-    <Content Include="index-backup.html" />
     <Content Include="packages.config" />
-    <Content Include=".gitattributes" />
-    <Content Include=".gitignore" />
-    <Content Include="compilerconfig.json" />
-    <None Include="compilerconfig.json.defaults" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="resources\js\controllers\styleGuideController.js" />
-    <Content Include="resources\js\lib\angularjs\angular-animate.js" />
-    <Content Include="resources\js\lib\angularjs\angular-animate.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-aria.js" />
-    <Content Include="resources\js\lib\angularjs\angular-aria.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-cookies.js" />
-    <Content Include="resources\js\lib\angularjs\angular-cookies.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-csp.css" />
-    <Content Include="resources\js\lib\angularjs\angular-loader.js" />
-    <Content Include="resources\js\lib\angularjs\angular-loader.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-message-format.js" />
-    <Content Include="resources\js\lib\angularjs\angular-message-format.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-messages.js" />
-    <Content Include="resources\js\lib\angularjs\angular-messages.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-mocks.js" />
-    <Content Include="resources\js\lib\angularjs\angular-parse-ext.js" />
-    <Content Include="resources\js\lib\angularjs\angular-parse-ext.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-resource.js" />
-    <Content Include="resources\js\lib\angularjs\angular-resource.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-route.js" />
-    <Content Include="resources\js\lib\angularjs\angular-route.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-sanitize.js" />
-    <Content Include="resources\js\lib\angularjs\angular-sanitize.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular-scenario.js" />
-    <Content Include="resources\js\lib\angularjs\angular-touch.js" />
-    <Content Include="resources\js\lib\angularjs\angular-touch.min.js" />
-    <Content Include="resources\js\lib\angularjs\angular.js" />
-    <Content Include="resources\js\lib\angularjs\angular.min.js" />
-    <Content Include="resources\js\scripts\controllers\styleGuideController.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-animate.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-animate.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-aria.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-aria.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-cookies.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-cookies.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-csp.css" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-loader.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-loader.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-message-format.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-message-format.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-messages.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-messages.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-mocks.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-parse-ext.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-parse-ext.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-resource.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-resource.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-route.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-route.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-sanitize.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-sanitize.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-scenario.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-touch.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-touch.min.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular.js" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular.min.js" />
-    <Content Include="resources\js\scripts\services\payees-service.js" />
-    <Content Include="resources\js\scripts\services\templateService.js" />
-    <Content Include="resources\js\scripts\services\transactions-service.js" />
-    <Content Include="resources\js\services\styleGuideService.js" />
-    <Content Include="resources\js\objects\stylesObject.js" />
-    <Content Include="resources\styles\scss\base.scss" />
-    <Content Include="resources\styles\scss\global.scss" />
-    <Content Include="resources\styles\scss\header.scss" />
-    <Content Include="resources\styles\scss\variables.scss" />
-    <Content Include="resources\styles\scss\style-guide.scss" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-animate.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-aria.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-cookies.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-loader.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-message-format.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-messages.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-parse-ext.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-resource.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-route.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-sanitize.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular-touch.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\angular.min.js.map" />
-    <Content Include="resources\js\scripts\libraries\angularjs\errors.json" />
-    <Content Include="resources\js\scripts\libraries\angularjs\version.json" />
-    <Content Include="resources\js\lib\angularjs\angular-animate.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-aria.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-cookies.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-loader.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-message-format.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-messages.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-parse-ext.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-resource.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-route.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-sanitize.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular-touch.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\angular.min.js.map" />
-    <Content Include="resources\js\lib\angularjs\errors.json" />
-    <Content Include="resources\js\lib\angularjs\version.json" />
+    <Content Include="scripts\controllers\styleGuideController.js" />
+    <Content Include="scripts\libraries\angularjs\version.json" />
+    <Content Include="scripts\libraries\angularjs\errors.json" />
+    <Content Include="scripts\libraries\angularjs\angular.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-touch.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-sanitize.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-route.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-resource.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-parse-ext.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-messages.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-message-format.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-loader.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-cookies.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-aria.min.js.map" />
+    <Content Include="scripts\libraries\angularjs\angular-animate.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -176,34 +91,45 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
-    <Content Include="resources\js\color-shader.js" />
-    <Content Include="resources\js\inline-edit.js" />
-    <Content Include="resources\js\insert-into-head.js" />
-    <Content Include="resources\js\style-guide.js" />
-    <Content Include="resources\styles\css\inline-edit.css" />
-    <Content Include="resources\styles\css\slider-mobile.css" />
-    <Content Include="resources\styles\scss\global.css">
-      <DependentUpon>global.scss</DependentUpon>
-    </Content>
-    <Content Include="resources\styles\scss\global.min.css">
-      <DependentUpon>global.css</DependentUpon>
-    </Content>
-    <Content Include="style-guide.html" />
+    <Content Include="index-template.html" />
+    <Content Include="scripts\controllers\templateController.js" />
+    <Content Include="scripts\libraries\angularjs\angular-animate.js" />
+    <Content Include="scripts\libraries\angularjs\angular-animate.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-aria.js" />
+    <Content Include="scripts\libraries\angularjs\angular-aria.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-cookies.js" />
+    <Content Include="scripts\libraries\angularjs\angular-cookies.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-csp.css" />
+    <Content Include="scripts\libraries\angularjs\angular-loader.js" />
+    <Content Include="scripts\libraries\angularjs\angular-loader.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-message-format.js" />
+    <Content Include="scripts\libraries\angularjs\angular-message-format.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-messages.js" />
+    <Content Include="scripts\libraries\angularjs\angular-messages.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-mocks.js" />
+    <Content Include="scripts\libraries\angularjs\angular-parse-ext.js" />
+    <Content Include="scripts\libraries\angularjs\angular-parse-ext.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-resource.js" />
+    <Content Include="scripts\libraries\angularjs\angular-resource.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-route.js" />
+    <Content Include="scripts\libraries\angularjs\angular-route.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-sanitize.js" />
+    <Content Include="scripts\libraries\angularjs\angular-sanitize.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular-scenario.js" />
+    <Content Include="scripts\libraries\angularjs\angular-touch.js" />
+    <Content Include="scripts\libraries\angularjs\angular-touch.min.js" />
+    <Content Include="scripts\libraries\angularjs\angular.js" />
+    <Content Include="scripts\libraries\angularjs\angular.min.js" />
+    <Content Include="scripts\objects\stylesObject.js" />
+    <Content Include="scripts\services\styleGuideService.js" />
+    <Content Include="scripts\services\templateService.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="resources\fonts\" />
-    <Folder Include="resources\js\directives\" />
-    <Folder Include="resources\js\scripts\directives\" />
+    <Folder Include="scripts\directives\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -218,9 +144,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54942</DevelopmentServerPort>
+          <DevelopmentServerPort>60589</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54942/</IISUrl>
+          <IISUrl>http://localhost:60589/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

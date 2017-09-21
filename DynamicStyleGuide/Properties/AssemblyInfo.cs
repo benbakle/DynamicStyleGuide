@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("dynamic_style_guide_1._1")]
+[assembly: AssemblyTitle("AngularTemplate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("dynamic_style_guide_1._1")]
+[assembly: AssemblyProduct("AngularTemplate")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("544aeacc-ca90-4798-b50a-396ab6385f7e")]
+[assembly: Guid("75ff5d43-97ac-444a-aa4a-763bd08088ba")]
 
 // Version information for an assembly consists of the following four values:
 //

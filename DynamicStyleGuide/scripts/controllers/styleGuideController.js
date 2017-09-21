@@ -6,9 +6,7 @@ function styleGuideController($scope, service) {
     var _htmlStyles = document.getElementById("styles");
     var _htmlPrintStyles = document.getElementById("printStyles");
 
-    $scope.styles = stylesObject();
-
-
+    $scope.styles = {};
     $scope.transpiledStyles = "";
     $scope.printStyles = "";
 
@@ -19,6 +17,8 @@ function styleGuideController($scope, service) {
     init();
 
     function init() {
+        $scope.styles = stylesObject();
+
         transpileCss();
         _htmlPrintStyles.innerHTML = $scope.transpiledStyles;
         _htmlStyles.innerHTML = "<style>" + $scope.transpiledStyles + "</style>";
@@ -74,7 +74,9 @@ function styleGuideController($scope, service) {
 
     function change() {
         $scope.transpiledStyles = "";
-        init();
+        transpileCss();
+        _htmlPrintStyles.innerHTML = $scope.transpiledStyles;
+        _htmlStyles.innerHTML = "<style>" + $scope.transpiledStyles + "</style>";
 
     }
     //function getStuff() {
