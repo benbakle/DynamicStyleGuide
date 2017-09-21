@@ -7,36 +7,42 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!--<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />-->
-</head>
 
-<body>
-    <div ng-app="app" ng-controller="styleGuideController">
-        <div class="container">
-            <div class="row">
-                <div ng-repeat="(key, selector) in styles" class="selector col-md-12" ng-cloak>
-                    <div class="sample" ng-if="styles[key].sampleHtml">
-                        <div ng-bind-html="styles[key].sampleHtml"></div>
-                    </div>
-                    <div class="properties">
-                        <div>{{styles[key].selector}}</div>
-                        <div ng-repeat="(prop, values) in selector track by $index" ng-if="$index > 0" class="property col-md-4">
-                            <label>{{splitCamelCaseString(prop.toString(),"-")}} :</label>
-                            <input ng-model="selector[prop]" ng-change="change()" class="form-control" />
-                        </div>
+    <style>
+        .ng-cloak
+        {
+            display: none !important;
+        }
+    </style>
+
+</head>
+<body ng-app="app" ng-controller="styleGuideController" ng-cloak>
+    <div class="container">
+        <div class="row">
+            <div ng-repeat="(key, selector) in styles" class="selector col-md-12">
+                <div class="sample" ng-if="styles[key].sampleHtml">
+                    <div ng-bind-html="styles[key].sampleHtml"></div>
+                </div>
+                <div class="properties">
+                    <div>{{styles[key].selector}}</div>
+                    <div ng-repeat="(prop, values) in selector track by $index" ng-if="$index > 0" class="property col-md-4">
+                        <label>{{splitCamelCaseString(prop.toString(),"-")}} :</label>
+                        <input ng-model="selector[prop]" ng-change="change()" class="form-control" />
                     </div>
                 </div>
             </div>
-
-            <hr>
-            <div class="title">SATURDAY SAT-SAT-SATURDAY! CSS RAW!</div>
-            <div>- triple (x3) click to select all -</div>
-            <br />
-            <!--<div id="printStyles"></div>-->
-            {{transpiledStyles}}
         </div>
-        <!--DYNAMICALLY CREATED CSS-->
-        <style ng-bind-html="transpiledStyles"></style>
+
+        <hr>
+        <div class="title">SATURDAY SAT-SAT-SATURDAY! CSS RAW!</div>
+        <div>- triple (x3) click to select all -</div>
+        <br />
+        <!--<div id="printStyles"></div>-->
+        {{transpiledStyles}}
     </div>
+
+    <!--DYNAMICALLY CREATED CSS-->
+    <style ng-bind-html="transpiledStyles"></style>
 
     <!--LIBRARIES-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -61,4 +67,3 @@
     <!--<script src="scripts/insert-into-head.js"></script>-->
 </body>
 </html>
-
