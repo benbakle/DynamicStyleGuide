@@ -6,17 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <!--<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />-->
-
-    <style>
-        .ng-cloak
-        {
-            display: none !important;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
 
 </head>
 <body ng-app="app" ng-controller="styleGuideController" ng-cloak>
+
+    <div class="container">
+        <div class="form-group">
+            <label>selector name:</label>
+            <input ng-model="newSelector.name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>selector:</label>
+            <input ng-model="newSelector.selector" class="form-control" />
+        </div>
+        <a ng-href="#" ng-click="addSelector()">Add Selector</a>
+    </div>
     <div class="container">
         <div class="row">
             <div ng-repeat="(key, selector) in styles" class="selector col-md-12">
@@ -27,7 +32,7 @@
                     <div>{{styles[key].selector}}</div>
                     <div ng-repeat="(prop, values) in selector track by $index" ng-if="$index > 0" class="property col-md-4">
                         <label>{{splitCamelCaseString(prop.toString(),"-")}} :</label>
-                        <input ng-model="selector[prop]" ng-change="change()" class="form-control" />
+                        <input ng-model="selector[prop]" ng-change="change()" class="form-control" value="{{values}}" type="{{getPropertyType(prop)}}" />
                     </div>
                 </div>
             </div>
