@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div ng-app="app" ng-controller="styleGuideController" >
+    <div ng-app="app" ng-controller="styleGuideController">
         <div class="container">
             <div class="row">
                 <div ng-repeat="(key, selector) in styles" class="selector col-md-12" ng-cloak>
@@ -31,12 +31,14 @@
             <div class="title">SATURDAY SAT-SAT-SATURDAY! CSS RAW!</div>
             <div>- triple (x3) click to select all -</div>
             <br />
-            <div id="printStyles"></div>
+            <!--<div id="printStyles"></div>-->
+            {{transpiledStyles}}
+            <style ng-bind-html="transpiledStyles"></style>
         </div>
     </div>
 
     <!--DYNAMICALLY CREATED CSS-->
-    <div id="styles"></div>
+    <!--<div id="styles"></div>-->
 
     <!--LIBRARIES-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>

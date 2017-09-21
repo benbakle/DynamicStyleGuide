@@ -6,6 +6,8 @@ function styleGuideController($scope, service) {
     var _htmlStyles = document.getElementById("styles");
     var _htmlPrintStyles = document.getElementById("printStyles");
 
+    $scope.htmlStyles = null;
+    $scope.htmlPrintStyles = null;
     $scope.styles = {};
     $scope.transpiledStyles = "";
     $scope.printStyles = "";
@@ -19,9 +21,7 @@ function styleGuideController($scope, service) {
     function init() {
         $scope.styles = stylesObject();
 
-        transpileCss();
-        _htmlPrintStyles.innerHTML = $scope.transpiledStyles;
-        _htmlStyles.innerHTML = "<style>" + $scope.transpiledStyles + "</style>";
+        writeStylesObjectToHtml();
         //storeStylesObject();
         addSelector("camelCase", ".testy");
         addPropertyToSelector("camelCase", "fontSize", "12px");
@@ -45,7 +45,7 @@ function styleGuideController($scope, service) {
         $scope.styles[selectorName][propertyName] = propertyValue;
     }
 
-    function transpileCss() {
+    function writeStylesObjectToHtml() {
         for (var selector in $scope.styles) {
             //   if (selector != "transpiledStyles") {
             $scope.transpiledStyles = $scope.transpiledStyles + $scope.styles[selector].selector + "{";
@@ -74,7 +74,7 @@ function styleGuideController($scope, service) {
 
     function change() {
         $scope.transpiledStyles = "";
-        transpileCss();
+        writeStylesObjectToHtml();
         _htmlPrintStyles.innerHTML = $scope.transpiledStyles;
         _htmlStyles.innerHTML = "<style>" + $scope.transpiledStyles + "</style>";
 
