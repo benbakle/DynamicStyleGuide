@@ -41,7 +41,8 @@ function styleGuideController($scope, service) {
     //}
 
     function getStylesObject() {
-        $scope.styles = service.getStylesObject();
+        //$scope.styles = service.getStylesObject();
+        $scope.styles = {};
     }
 
     function stringifyStylesObject() {
@@ -66,7 +67,7 @@ function styleGuideController($scope, service) {
         for (var selector in $scope.styles) {
             $scope.selectorArray.push($scope.styles[selector]);
         }
-     //   $scope.selectorARray = Object.keys($scope.styles)
+        //   $scope.selectorARray = Object.keys($scope.styles)
     }
 
     function getPropertyType(prop) {
@@ -85,9 +86,6 @@ function styleGuideController($scope, service) {
     function getStoredStylesObject() {
         return window.localStorage.getItem("styles");
     }
-
-
-
 
     function appendSelectorProperties(selector) {
         for (var property in selector) {
@@ -111,10 +109,5 @@ function styleGuideController($scope, service) {
         stringifyStylesObject();
 
     }
-    //function getStuff() {
-    //    service.getStuffByUsername('angular').then(function (response) {
-    //        $scope.stuff = [response.data, { name: "Fake", url: "a sort example for url" }];
-    //    });
-    //}
 }
 

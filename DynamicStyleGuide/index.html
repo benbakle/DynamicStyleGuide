@@ -12,31 +12,40 @@
 <body ng-app="app" ng-controller="styleGuideController" ng-cloak>
 
     <div class="container">
-        <div class="form-group">
-            <label>selector name:</label>
-            <input ng-model="newSelector.name" class="form-control" />
+        <div class="row">
+            <div class="col-md-6">
+                <h3>New selector</h3>
+                <div class="form-group">
+                    <label>selector name:</label>
+                    <input ng-model="newSelector.name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>selector:</label>
+                    <input ng-model="newSelector.selector" class="form-control" />
+                </div>
+                <a ng-href="#" ng-click="addSelector()" class="btn btn-default">Add Selector</a>
+            </div>
+            <div class="col-md-6">
+                <h3>Add property to selector</h3>
+                <div class="form-group">
+                    <label>selector:</label>
+                    <select ng-model="newProperty.selector" class="form-control">
+                        <option ng-repeat="(key, selector) in styles" value="{{key}}">{{selector.selector}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>property name:</label>
+                    <input ng-model="newProperty.name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>property value:</label>
+                    <input ng-model="newProperty.value" class="form-control" />
+                </div>
+                <a ng-href="#" ng-click="addPropertyToSelector()" class="btn btn-default">Add Property to {{newProperty.selector}}</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label>selector:</label>
-            <input ng-model="newSelector.selector" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>selector name:</label>
-            <select ng-model="newProperty.selector" class="form-control">
-                <option ng-repeat="selector in styles" value="{{selector}}">{{selector.selector}}</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>property:</label>
-            <input ng-model="newProperty.name" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label>property:</label>
-            <input ng-model="newProperty.value" class="form-control" />
-        </div>
-        <a ng-href="#" ng-click="addSelector()">Add Selector</a>
-        <a ng-href="#" ng-click="addPropertyToSelector()">Add Property to {{newProperty}}</a>
     </div>
+    <hr />
     <div class="container">
         <div class="row">
             <div ng-repeat="(key, selector) in styles" class="selector col-md-12">
