@@ -9,14 +9,14 @@ function styleGuideController($scope, service) {
     $scope.htmlStyles = null;
     $scope.htmlPrintStyles = null;
     $scope.styles = {};
+    $scope.selectorArray = [];
     $scope.transpiledStyles = "";
     $scope.printStyles = "";
 
-    $scope.newSelector = {};
-    $scope.newSelector.name = "";
-    $scope.newSelector.selector = "";
-
+    $scope.newSelector = { name: null, selector: null }
+    $scope.newProperty = { selector: null, name: null, value: null };
     $scope.addSelector = addSelector;
+    $scope.addPropertyToSelector = addPropertyToSelector;
 
     $scope.getStylesObject = getStylesObject;
     $scope.change = change;
@@ -30,15 +30,10 @@ function styleGuideController($scope, service) {
     function init() {
         getStylesObject();
         stringifyStylesObject();
-
-
-        //storeStylesObject();
-        // addSelector("camelCase", ".testy");
-        // addPropertyToSelector("camelCase", "fontSize", "12px");
-        // addPropertyToSelector("camelCase", "sampleHtml", "<div class='testy'>Test Biatch</div>");
-        console.log($scope.styles);
+        setSelectorArray();
     }
 
+    //:: SAVE FOR ACTUAL SERVICE CALL :://    
     //function getStylesObject() {
     //    service.getStylesObject().then(function (response) {
     //        $scope.styles = response.data;
@@ -57,16 +52,31 @@ function styleGuideController($scope, service) {
         }
     }
 
+    function addSelector() {
+        $scope.styles[$scope.newSelector.name] = { selector: $scope.newSelector.selector };
+        change();
+    }
+
+    function addPropertyToSelector() {
+        $scope.styles[$scope.newProperty.selector][$scope.newProperty.name] = $scope.newProperty.value;
+        change();
+    }
+
+    function setSelectorArray() {
+        for (var selector in $scope.styles) {
+            $scope.selectorArray.push($scope.styles[selector]);
+        }
+     //   $scope.selectorARray = Object.keys($scope.styles)
+    }
+
     function getPropertyType(prop) {
-        debugger;
-        if (prop == "color" || prop =="backgroundColor") {
+        if (prop == "color" || prop == "backgroundColor") {
             return "color";
         }
         else {
             return "text";
         }
     }
-
 
     function storeStylesObject() {
         window.localStorage.setItem("styles", JSON.stringify($scope.styles));
@@ -76,14 +86,7 @@ function styleGuideController($scope, service) {
         return window.localStorage.getItem("styles");
     }
 
-    function addSelector() {
-        $scope.styles[$scope.newSelector.name] = { selector: $scope.newSelector.selector };
-        change();
-    }
 
-    function addPropertyToSelector(selectorName, propertyName, propertyValue) {
-        $scope.styles[selectorName][propertyName] = propertyValue;
-    }
 
 
     function appendSelectorProperties(selector) {

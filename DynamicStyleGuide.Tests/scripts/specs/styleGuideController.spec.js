@@ -14,6 +14,23 @@
         })
     });
 
+    describe("when adding a selector", function () {
+        it("adds a new selector to the styles", function () {
+            _$scope.newSelector = _newSelector();
+            _$scope.addSelector();
+
+            expect(_$scope.styles).toEqual(_mockAddedSelectorStylesObject());
+            expect(_$scope.addSelector).toBeDefined();
+        });
+    });
+
+    describe("when adding a property", function () {
+        it("adds a new property and value to an existing selector", function () {
+            _$scope.addPropertyToSelector("body", "fontSize", "1rem");
+            expect(_$scope.styles).toEqual(_mockAddedPropertyStylesObject());
+        })
+    })
+
     //:: METHODS FOR TESTS :://
     function setup() {
         module('app');
@@ -52,4 +69,29 @@ function _mockStylesObject() {
             color: "#fff",
         }
     }
+}
+function _mockAddedSelectorStylesObject() {
+    return {
+        body: {
+            selector: "body",
+            color: "#fff",
+        },
+        added: {
+            selector: ".added"
+        }
+    }
+}
+
+function _mockAddedPropertyStylesObject() {
+    return {
+        body: {
+            selector: "body",
+            color: "#fff",
+            fontSize: "1rem"
+        }
+    }
+}
+
+function _newSelector() {
+    return { name: "added", selector: ".added" }
 }

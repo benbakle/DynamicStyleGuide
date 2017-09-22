@@ -8,7 +8,8 @@
             selector: "body",
             fontFamily: "Century Gothic",
             color: "#fff",
-            backgroundColor: "#333"
+            backgroundColor: "#333",
+            transitionDuration: ".5s",
         },
         p: {
             selector: "p",
@@ -70,7 +71,7 @@
         },
         buttonHover: {
             selector: ".button:hover, .button.hover",
-            background: "#333",
+            backgroundColor: "#333",
             color: "#fff",
             textDecoration: "none"
         },
@@ -84,7 +85,7 @@
             selector: "#printStyles",
             color: "#fff",
             fontFamily: "Courier New",
-            fontWeight: "700"
+            fontWeight: "400"
         },
         sample: {
             selector: ".sample",

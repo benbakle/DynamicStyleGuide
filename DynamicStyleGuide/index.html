@@ -20,7 +20,22 @@
             <label>selector:</label>
             <input ng-model="newSelector.selector" class="form-control" />
         </div>
+        <div class="form-group">
+            <label>selector name:</label>
+            <select ng-model="newProperty.selector" class="form-control">
+                <option ng-repeat="selector in styles" value="{{selector}}">{{selector.selector}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>property:</label>
+            <input ng-model="newProperty.name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>property:</label>
+            <input ng-model="newProperty.value" class="form-control" />
+        </div>
         <a ng-href="#" ng-click="addSelector()">Add Selector</a>
+        <a ng-href="#" ng-click="addPropertyToSelector()">Add Property to {{newProperty}}</a>
     </div>
     <div class="container">
         <div class="row">
@@ -42,8 +57,9 @@
         <div class="title">SATURDAY SAT-SAT-SATURDAY! CSS RAW!</div>
         <div>- triple (x3) click to select all -</div>
         <br />
-        <!--<div id="printStyles"></div>-->
-        {{transpiledStyles}}
+        <div id="printStyles">
+            {{transpiledStyles}}
+        </div>
     </div>
 
     <!--DYNAMICALLY CREATED CSS-->
