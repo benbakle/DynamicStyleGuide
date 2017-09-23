@@ -1,4 +1,4 @@
-﻿function stylesObject() {
+﻿function stylesObjectTest() {
     return {
         root: {
             selector: ":root",
@@ -6,16 +6,16 @@
         },
         body: {
             selector: "body",
-            fontFamily: "Century Gothic",
-            color: "#fff",
-            backgroundColor: "#333",
+            fontFamily: "Roboto",
+            color: "#ffffff",
+            backgroundColor: "#222222",
             transitionDuration: ".5s",
         },
         p: {
             selector: "p",
             lineHeight: "1.7rem",
             fontSize: "1.2rem",
-            color: "#fff",
+            color: "#ffffff",
             transitionDuration: ".5s",
             sampleHtml: "<p>Donec sollicitudin molestie malesuada. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada</p>"
         },
@@ -23,7 +23,7 @@
             selector: "h1, .h1",
             fontSize: "4.2rem",
             fontFamily: "Century Gothic",
-            color: "#fff",
+            color: "#ffffff",
             margin: "15px 0 10px",
             fontWeight: "700",
             transitionDuration: ".5s",
@@ -57,12 +57,12 @@
             display: "inline-block",
             fontSize: "1.2rem",
             fontFamily: "Century Gothic",
-            backgroundColor: "#fff",
-            color: "#333",
+            backgroundColor: "#ffffff",
+            color: "#333333",
             textDecoration: "none",
             padding: "7px 15px",
             margin: "5px",
-            border: "1px solid #333",
+            border: "1px solid #333333",
             borderRadius: "4px",
             fontWeight: "400",
             transitionDuration: ".5s",
@@ -71,8 +71,8 @@
         },
         buttonHover: {
             selector: ".button:hover, .button.hover",
-            backgroundColor: "#333",
-            color: "#fff",
+            backgroundColor: "#555555",
+            color: "#ffffff",
             textDecoration: "none"
         },
         container: {
@@ -83,21 +83,27 @@
         },
         printStyles: {
             selector: "#printStyles",
-            color: "#fff",
+            color: "#ffffff",
             fontFamily: "Courier New",
             fontWeight: "400"
         },
         sample: {
             selector: ".sample",
-            margin: "20px 0",
+            margin: "75px 0",
 
         },
 
         selector: {
             selector: ".selector",
-            margin: "20px auto",
-            width: "100%"
+            padding:"0 0 25px",
+            width: "100%",
+            borderBottom: "1px solid #fff"
 
+        },
+        modelContent: {
+            selector: ".modal-content",
+            color:"#333333"
         }
+        
     }
 }

@@ -83,6 +83,18 @@
     <Content Include="scripts\libraries\angularjs\angular-cookies.min.js.map" />
     <Content Include="scripts\libraries\angularjs\angular-aria.min.js.map" />
     <Content Include="scripts\libraries\angularjs\angular-animate.min.js.map" />
+    <Content Include="scripts\objects\stylesObject-default.js" />
+    <Content Include="styles\dsg.css">
+      <DependentUpon>dsg.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\dsg.min.css">
+      <DependentUpon>dsg.css</DependentUpon>
+    </Content>
+    <Content Include="styles\dsg.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -91,7 +103,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index-template.html" />
     <Content Include="scripts\controllers\templateController.js" />
     <Content Include="scripts\libraries\angularjs\angular-animate.js" />
     <Content Include="scripts\libraries\angularjs\angular-animate.min.js" />
@@ -120,7 +131,7 @@
     <Content Include="scripts\libraries\angularjs\angular-touch.min.js" />
     <Content Include="scripts\libraries\angularjs\angular.js" />
     <Content Include="scripts\libraries\angularjs\angular.min.js" />
-    <Content Include="scripts\objects\stylesObject.js" />
+    <Content Include="scripts\objects\stylesObject-test.js" />
     <Content Include="scripts\services\styleGuideService.js" />
     <Content Include="scripts\services\templateService.js" />
     <Content Include="Web.config" />

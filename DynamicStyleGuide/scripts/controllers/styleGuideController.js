@@ -41,8 +41,8 @@ function styleGuideController($scope, service) {
     //}
 
     function getStylesObject() {
-        //$scope.styles = service.getStylesObject();
-        $scope.styles = {};
+        $scope.styles = service.getStylesObject();
+        //$scope.styles = {};
     }
 
     function stringifyStylesObject() {
