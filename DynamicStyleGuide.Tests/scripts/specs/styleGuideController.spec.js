@@ -26,7 +26,12 @@
 
     describe("when adding a property", function () {
         it("adds a new property and value to an existing selector", function () {
-            _$scope.addPropertyToSelector("body", "fontSize", "1rem");
+            _$scope.styles = _mockStylesObject();
+            _$scope.newProperty.selector = "body";
+            _$scope.newProperty.name = "fontSize";
+            _$scope.newProperty.value = "1rem";
+            _$scope.addPropertyToSelector();
+
             expect(_$scope.styles).toEqual(_mockAddedPropertyStylesObject());
         })
     })
@@ -76,7 +81,7 @@ function _mockAddedSelectorStylesObject() {
             selector: "body",
             color: "#fff",
         },
-        added: {
+        selector1: {
             selector: ".added"
         }
     }

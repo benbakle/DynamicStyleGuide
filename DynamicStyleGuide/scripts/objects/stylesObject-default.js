@@ -2,108 +2,137 @@
     return {
         root: {
             selector: ":root",
-            fontSize: ""
+            fontSize: "16px"
         },
         body: {
             selector: "body",
-            fontFamily: "",
-            fontSize: "",
-            color: "",
-            backgroundColor: "",
+            backgroundColor: "#144A66",
+            color: "#ffffff",
+            fontFamily: "century gothic",
+            fontSize: "1rem",
             transitionDuration: ".5s",
         },
         p: {
-            selector: "p",
-            lineHeight: "",
-            fontSize: "",
+            selector: "p, .p, article, .article",
+            sampleHtml: "<p>Proin eget tortor risus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
             color: "",
+            fontFamily: "1.2rem",
+            fontSize: "1.2rem",
+            lineHeight: "1.2em",
             transitionDuration: ".5s",
-            sampleHtml: "<p>Proin eget tortor risus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>"
+        },
+        h1: {
+            selector: "h1, .h1",
+            sampleHtml: "<h1>Lorem Ipsum Dolar</h1>",
+            color: "",
+            fontFamily: "century gothic",
+            fontSize: "3.5rem",
+            fontStyle: "normal",
+            fontWeight: "700",
+            transitionDuration: ".5s"
+        },
+        h2: {
+            selector: "h2, .h2",
+            sampleHtml: "<h2>Lorem Ipsum Dolar</h2>",
+            color: "",
+            fontFamily: "century gothic",
+            fontSize: "3rem",
+            fontStyle: "normal",
+            fontWeight: "400",
+            transitionDuration: ".5s",
+        },
+
+        h3: {
+            selector: "h3, .h3",
+            sampleHtml: "<h3>Lorem Ipsum Dolar</h3>",
+            color: "",
+            fontFamily: "century gothic",
+            fontSize: "2.5rem",
+            fontStyle: "normal",
+            fontWeight: "400",
+            transitionDuration: ".5s",
+        },
+        h4: {
+            selector: "h4, .h4",
+            sampleHtml: "<h4>Lorem Ipsum Dolar</h4>",
+            color: "",
+            fontFamily: "century gothic",
+            fontSize: "2rem",
+            fontStyle: "normal",
+            fontWeight: "400",
+            transitionDuration: ".5s",
+        },
+        h5: {
+            selector: "h5, .h5",
+            sampleHtml: "<h5>Lorem Ipsum Dolar</h5>",
+            color: "",
+            fontFamily: "century gothic",
+            fontSize: "1.5rem",
+            fontStyle: "normal",
+            fontWeight: "400",
+            transitionDuration: ".5s",
+        },
+        h6: {
+            selector: "h6, .h6",
+            sampleHtml: "<h6>Lorem Ipsum Dolar</h6>",
+            color: "",
+            fontFamily: "century gothic",
+            fontSize: "1rem",
+            fontStyle: "normal",
+            fontWeight: "400",
+            transitionDuration: ".5s",
+        },
+
+        a: {
+            selector: "a",
+            sampleHtml: "<a href='#'>Read More</a>",
+            color: "#ffa800",
+            textDecoration: "underline",
+            transitionDuration: ".5s",
+        },
+        aHover: {
+            selector: "a:hover, a.hover",
+            sampleHtml: "<a href='#' class='hover'>Read More</a>",
+            color: "#ffffff",
+            textDecoration: "none"
+        },
+        button: {
+            selector: ".button",
+            sampleHtml: "<a href='#' class='button'>submit</a><a href='#' class='button'>cancel</a>",
+            backgroundColor: "#FFA800",
+            borderRadius: ".25em",
+            boxShadow: "rgba(0,0,0,.3) 5px 5px 10px",
+            color: "#ffffff",
+            display: "inline-block",
+            fontSize: "1rem",
+            margin: "1em 1em 1em 0",
+            padding: ".5em 1em",
+            textDecoration: "none",
+            transitionDuration: ".5s"
+        },
+        buttonHover: {
+            selector: ".button:hover, .button.hover",
+            sampleHtml: "<a href='#' class='button hover'>submit</a><a href='#' class='button hover'>cancel</a>",
+            color: "#FFA800",
+            backgroundColor: "#ffffff",
+            textDecoration: "none"
+        },
+        large: {
+            selector: ".large",
+            sampleHtml: "<p class='large'>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada.</p><a href='#' class='button large'>submit</a><a href='#' class='button large'>cancel</a>",
+            fontSize: "2rem",
+        },
+        small: {
+            selector: ".small",
+            sampleHtml: "<p class='small'>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada.</p><a href='#' class='button small'>submit</a><a href='#' class='button small'>cancel</a>",
+            fontSize: ".8rem",
         }
-        //h1: {
-        //    selector: "h1, .h1",
-        //    fontSize: "4.2rem",
-        //    fontFamily: "Century Gothic",
-        //    color: "#ffffff",
-        //    margin: "15px 0 10px",
-        //    fontWeight: "700",
-        //    transitionDuration: ".5s",
-        //    sampleHtml: "<h1>Quisque velit nisi</h1>"
-        //},
-        //a: {
-        //    selector: "a",
-        //    display: "inline",
-        //    fontSize: "1.2rem",
-        //    fontFamily: "Century Gothic",
-        //    backgroundColor: "transparent",
-        //    color: "#ccc",
-        //    textDecoration: "underline",
-        //    padding:"0",
-        //    margin:"0",
-        //    border: "none",
-        //    borderRadius: "none",
-        //    fontWeight: "400",
-        //    transitionDuration: ".5s",
-        //    sampleHtml: "<a href='javascript:void(0)'>click here</a>"
-        //},
-        //aHover: {
-        //    selector: "a:hover, a.hover",
-        //    background: "transparent",
-        //    color: "#555",
-        //    textDecoration: "none"
-
-        //},
-        //button: {
-        //    selector: ".button",
-        //    display: "inline-block",
-        //    fontSize: "1.2rem",
-        //    fontFamily: "Century Gothic",
-        //    backgroundColor: "#ffffff",
-        //    color: "#333333",
-        //    textDecoration: "none",
-        //    padding: "7px 15px",
-        //    margin: "5px",
-        //    border: "1px solid #333333",
-        //    borderRadius: "4px",
-        //    fontWeight: "400",
-        //    transitionDuration: ".5s",
-        //    cursor: "pointer",
-        //    sampleHtml: "<a href='javascript:void(0)' class='button'>Submit</a><a href='javascript:void(0)' class='button'>Cancel</a>"
-        //},
-        //buttonHover: {
-        //    selector: ".button:hover, .button.hover",
-        //    backgroundColor: "#555555",
-        //    color: "#ffffff",
-        //    textDecoration: "none"
-        //},
-        //container: {
-        //    selector: ".container",
-        //    margin: "50px auto",
-        //    padding: "0 15px",
-        //    maxWidth: "992px"
-        //},
-        //printStyles: {
-        //    selector: "#printStyles",
-        //    color: "#ffffff",
-        //    fontFamily: "Courier New",
-        //    fontWeight: "400"
-        //},
-        //sample: {
-        //    selector: ".sample",
-        //    margin: "75px 0",
-
-        //},
-        //selector: {
-        //    selector: ".selector",
-        //    padding:"0 0 25px",
-        //    width: "100%",
-        //    borderBottom: "1px solid #fff"
-
-        //},
-        //modelContent: {
-        //    selector: ".modal-content",
-        //    color:"#333333"
-        //}
-        
     }
+
+
 }
+//},
+//modelContent: {
+//    selector: ".modal-content",
+//    color:"#333333"
+//}

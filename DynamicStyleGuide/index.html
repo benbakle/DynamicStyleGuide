@@ -13,21 +13,17 @@
 </head>
 <body ng-app="app" ng-controller="styleGuideController" class="style-guide" ng-cloak>
     <div class="container">
-        <div class="page-title">Dynamic Style Guide</div>
+        <div class="page-title">
+            <span>aptera</span> <strong>STYLE</strong><span>GUIDE</span>
+        </div>
         <div class="add-selector">
-            <div class="form-group">
-                <input ng-model="newSelector.name" class="form-control" placeholder="title" />
-                <div class="note">
-                    <span>Example: mySelector</span> <i>(use camel case)</i>
-                </div>
-            </div>
             <div class="form-group">
                 <input ng-model="newSelector.selector" class="form-control" placeholder="css selector" />
                 <div class="note">
                     <span>Example: h1, .h1</span>
                 </div>
             </div>
-            <a ng-href="#" ng-click="addSelector()" class="button pull-right"><i class="fa fa-plus" aria-hidden="true"></i> add selector</a>
+            <a ng-href="#" ng-click="addSelector()" class="button large pull-right"><i class="fa fa-plus" aria-hidden="true"></i> add selector</a>
         </div>
     </div>
     <!-- Modal -->
@@ -64,9 +60,16 @@
                     <div ng-bind-html="styles[key].sampleHtml" ng-if="styles[key].sampleHtml"></div>
                 </div>
                 <div class="properties">
-                    <div ng-repeat="(prop, values) in selector track by $index" ng-if="$index > 0" class="property col-md-4">
-                        <label>{{splitCamelCaseString(prop.toString(),"-")}} :</label>
-                        <input ng-model="selector[prop]" ng-change="change()" class="form-control" value="{{values}}" type="{{getPropertyType(prop)}}" />
+                    <div class="sample-html" ng-if="selector['sampleHtml']">
+                        <label>sample html :</label>
+                        <textarea ng-model="selector['sampleHtml']" class="form-control"></textarea>
+                    </div>
+                    <!--ng-if="$index > 1"-->
+                    <div ng-repeat="(prop, values) in selector track by $index">
+                        <div ng-if="isCssProperty(prop)" class="property col-md-4">
+                            <label>{{splitCamelCaseString(prop.toString(),"-")}} :</label>
+                            <input ng-model="selector[prop]" ng-change="change()" class="form-control" value="{{values}}" type="{{getPropertyType(prop)}}" />
+                        </div>
                     </div>
                     <div class="col-md-12">
                         <!--<a href="javascript:void(0)" class="add-property" data-toggle="modal" data-target="#myModal" ng-click="newProperty.selector = key"><i class="fa fa-plus" aria-hidden="true"></i></a>-->
