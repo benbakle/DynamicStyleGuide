@@ -1,23 +1,27 @@
 ﻿.style-guide
 {
-    .button
-    {
-        display: inline-block;
-        font-size: 16px;
-        padding: 7px 15px;
-        background-color: #efefef;
-        color: #777;
-        border-radius: 4px;
-        text-decoration: none;
-        box-shadow: rgba(0,0,0,.4) 5px 5px 10px;
-        margin: 15px 0;
-        transition-duration: .5s;
+    $sg-primary-color: #FFA800;
+    $sg-secondary-color: #144A66;
 
-        &:hover
+    .sample-html
+    {
+        padding: 0;
+        margin: 30px 15px;
+
+        .form-control
         {
-            color: #efefef;
-            background-color: #555;
+            color: #333;
+            display: block;
+            height: 100px;
+            font-size: 1rem;
+            font-family: "Courier New";
         }
+    }
+
+    .title
+    {
+        font-size: 36px;
+        margin-bottom: 50px;
     }
 
     .note
@@ -30,6 +34,14 @@
     {
         font-size: 52px;
         margin: 15px 0 25px;
+        line-height: 54px;
+
+        span
+        {
+            font-weight: 700;
+            font-family: 'Century Gothic';
+            color: #FFA800;
+        }
     }
 
     .add-selector
@@ -50,9 +62,6 @@
                 }
             }
         }
-        .button{
-            font-size:36px;
-        }
     }
 
     .selector
@@ -63,16 +72,24 @@
         margin-right: 15px;
         border-top: 1px solid #efefef;
 
-        .title
+        .sample
         {
-            font-size: 36px;
-            margin-bottom:50px;
+            margin-bottom: 50px;
         }
+    }
 
-        .button
-        {
-            font-size: 16px;
-        }
+    #printStyles
+    {
+        font-size: 18px;
+        font-family: "Courier New";
+        padding: 0 15px 50px;
+        margin-top: -50px;
+        font-weight: 700;
+    }
+
+    .modal-content
+    {
+        color: #333333;
     }
 }
 
@@ -116,3 +133,4 @@
 {
     padding: 15px;
 }*/
+

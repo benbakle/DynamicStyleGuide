@@ -24,6 +24,11 @@ function styleGuideController($scope, service) {
     $scope.getSelectorProperties = getSelectorProperties;
     $scope.getPropertyType = getPropertyType;
 
+    $scope.selectorKeyCount = 0;
+    $scope.selectorKey = "selector" + $scope.selectorKeyCount;
+    $scope.incrementSelectorKeyCount = incrementSelectorKeyCount;
+
+    $scope.isCssProperty = isCssProperty;
 
     init();
 
@@ -39,11 +44,20 @@ function styleGuideController($scope, service) {
     //        $scope.styles = response.data;
     //    });
     //}
-
     function getStylesObject() {
         $scope.styles = service.getStylesObject();
         //$scope.styles = {};
     }
+
+
+    function isCssProperty(prop) {
+        return prop != "sampleHtml" && prop != "selector";
+    }
+
+    function incrementSelectorKeyCount() {
+        $scope.selectorKeyCount++;
+    }
+
 
     function stringifyStylesObject() {
         for (var selector in $scope.styles) {
@@ -54,7 +68,10 @@ function styleGuideController($scope, service) {
     }
 
     function addSelector() {
-        $scope.styles[$scope.newSelector.name] = { selector: $scope.newSelector.selector };
+        incrementSelectorKeyCount();
+        $scope.selectorKey = "selector" + $scope.selectorKeyCount;
+        debugger;
+        $scope.styles[$scope.selectorKey] = { selector: $scope.newSelector.selector };
         change();
     }
 
