@@ -65,8 +65,8 @@
                         <textarea ng-model="selector['sampleHtml']" class="form-control"></textarea>
                     </div>
                     <!--ng-if="$index > 1"-->
-                    <div ng-repeat="(prop, values) in selector track by $index">
-                        <div ng-if="isCssProperty(prop)" class="property col-md-4">
+                    <div ng-repeat="(prop, values) in selector track by $index" ng-if="isCssProperty(prop)">
+                        <div class="property col-md-4">
                             <label>{{splitCamelCaseString(prop.toString(),"-")}} :</label>
                             <input ng-model="selector[prop]" ng-change="change()" class="form-control" value="{{values}}" type="{{getPropertyType(prop)}}" />
                         </div>
