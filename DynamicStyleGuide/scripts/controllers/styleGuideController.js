@@ -6,27 +6,22 @@ function styleGuideController($scope, service) {
     var _htmlStyles = document.getElementById("styles");
     var _htmlPrintStyles = document.getElementById("printStyles");
 
-    $scope.htmlStyles = null;
-    $scope.htmlPrintStyles = null;
     $scope.styles = {};
-    $scope.selectorArray = [];
+    $scope.htmlStyles = null;
     $scope.transpiledStyles = "";
+    $scope.htmlPrintStyles = null;
     $scope.printStyles = "";
 
-    $scope.newSelector = { name: null, selector: null }
+    $scope.newSelector = "";
     $scope.newProperty = { selector: null, name: null, value: null };
     $scope.addSelector = addSelector;
     $scope.addPropertyToSelector = addPropertyToSelector;
 
-    $scope.getStylesObject = getStylesObject;
-    $scope.change = change;
+    $scope.updateStylesObject = updateStylesObject;
     $scope.splitCamelCaseString = splitCamelCaseString;
     $scope.getSelectorProperties = getSelectorProperties;
     $scope.getPropertyType = getPropertyType;
 
-    $scope.selectorKeyCount = 0;
-    $scope.selectorKey = "selector" + $scope.selectorKeyCount;
-    $scope.incrementSelectorKeyCount = incrementSelectorKeyCount;
 
     $scope.isCssProperty = isCssProperty;
 
@@ -35,7 +30,6 @@ function styleGuideController($scope, service) {
     function init() {
         getStylesObject();
         stringifyStylesObject();
-        setSelectorArray();
     }
 
     //:: SAVE FOR ACTUAL SERVICE CALL :://    
@@ -49,43 +43,33 @@ function styleGuideController($scope, service) {
         //$scope.styles = {};
     }
 
-
     function isCssProperty(prop) {
-        return prop != "sampleHtml" && prop != "selector";
+        return prop != "sampleHtml";
     }
-
-    function incrementSelectorKeyCount() {
-        $scope.selectorKeyCount++;
-    }
-
 
     function stringifyStylesObject() {
-        for (var selector in $scope.styles) {
-            $scope.transpiledStyles = $scope.transpiledStyles + $scope.styles[selector].selector + "{";
-            appendSelectorProperties($scope.styles[selector]);
-            $scope.transpiledStyles = $scope.transpiledStyles + "}";
+        for (var query in $scope.styles) {
+            var queryObj = $scope.styles[query]
+            for (var selector in queryObj) {
+                if (selector != "mediaQuery") {
+                    $scope.transpiledStyles = $scope.transpiledStyles + selector + "{";
+                    appendSelectorProperties(queryObj[selector]);
+                    $scope.transpiledStyles = $scope.transpiledStyles + "}";
+                }
+            }
         }
     }
 
     function addSelector() {
-        incrementSelectorKeyCount();
-        $scope.selectorKey = "selector" + $scope.selectorKeyCount;
-        debugger;
-        $scope.styles[$scope.selectorKey] = { selector: $scope.newSelector.selector };
-        change();
+        $scope.styles.xs[$scope.newSelector] = {};
+        updateStylesObject();
     }
 
     function addPropertyToSelector() {
-        $scope.styles[$scope.newProperty.selector][$scope.newProperty.name] = $scope.newProperty.value;
-        change();
+        $scope.styles.xs[$scope.newProperty.selector][$scope.newProperty.name] = $scope.newProperty.value;
+        updateStylesObject();
     }
 
-    function setSelectorArray() {
-        for (var selector in $scope.styles) {
-            $scope.selectorArray.push($scope.styles[selector]);
-        }
-        //   $scope.selectorARray = Object.keys($scope.styles)
-    }
 
     function getPropertyType(prop) {
         if (prop == "color" || prop == "backgroundColor") {
@@ -106,7 +90,7 @@ function styleGuideController($scope, service) {
 
     function appendSelectorProperties(selector) {
         for (var property in selector) {
-            if (property != "selector" && property != "sampleHtml") {
+            if (property != "sampleHtml") {
                 $scope.transpiledStyles = $scope.transpiledStyles + splitCamelCaseString(property, "-") + ":" + selector[property] + ";";
             }
         }
@@ -121,7 +105,7 @@ function styleGuideController($scope, service) {
     }
 
 
-    function change() {
+    function updateStylesObject() {
         $scope.transpiledStyles = "";
         stringifyStylesObject();
 
